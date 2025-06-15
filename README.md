@@ -13,7 +13,7 @@ backend/        # Python backend
 frontend/       # React frontend
 ```
 
-## Running Backend
+## Running Backend Manually
 
 Create a virtual environment and install requirements:
 
@@ -35,7 +35,7 @@ Run the Celery worker in a separate terminal:
 python -m backend.app.celery_worker
 ```
 
-## Running Frontend
+## Running Frontend Manually
 
 Install Node dependencies and start the development server:
 
@@ -46,3 +46,14 @@ npm run start
 ```
 
 This will serve the React app on [http://localhost:3000](http://localhost:3000).
+
+## Using the helper script
+
+A convenience script `start_app.sh` is provided to start the API, Celery worker and React app in one step. Execute it from the project root:
+
+```
+./start_app.sh
+```
+
+The script creates a virtual environment if needed, installs dependencies and runs all services concurrently. Press `Ctrl-C` to stop them.
+
